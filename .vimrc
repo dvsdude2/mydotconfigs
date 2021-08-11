@@ -1,14 +1,14 @@
 
    set nocompatible              " be iMproved, required
    filetype off                  " required
-   
+
    " set the runtime path to include Vundle and initialize
    set rtp+=~/.vim/bundle/Vundle.vim
    call vundle#begin()
    Plugin 'VundleVim/Vundle.vim'
 
       " Keep Plugin commands between vundle#begin/end.
-  
+
    Plugin 'tpope/vim-fugitive'
    Plugin 'vim-lastplace'                               " remembers last place edited
    Plugin 'francoiscabrol/ranger.vim'
@@ -30,8 +30,8 @@
    Plugin 'ryanoasis/vim-devicons'                      " Icons for Nerdtree
    " Plugin 'ascenator/L9', {'name': 'newL9'}
 
-   
-   
+
+
 
    " All of your Plugins must be added before the following line
    call vundle#end()            " required
@@ -41,10 +41,10 @@
    "filetype plugin on
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Key-bindings 
+" => Key-bindings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let mapleader=" "           " mapped leader to <space>
-"nnoremap q <nop>            " this should cancel the q mapping
+xnoremap <C-q> <nop>            " this should cancel the ctrl+q mapping
 " this lets you visualy select and move lines with <shift>
 xnoremap K :move '<-2<CR>gv-gv
 xnoremap J :move '>+1<CR>gv-gv
@@ -65,7 +65,7 @@ set number                      " Display line numbers
 set relativenumber              " Display line numbers
 set clipboard=unnamedplus       " Copy/paste between vim and other programs.
 syntax enable
-let g:rehash256 = 1   
+let g:rehash256 = 1
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Status Line
@@ -159,7 +159,7 @@ map <Leader>th <C-w>t<C-w>H
 map <Leader>tk <C-w>t<C-w>K
 
 " Removes pipes | that act as seperators on splits
-set fillchars+=vert:\ 
+set fillchars+=vert:\
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VimWiki
