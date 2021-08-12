@@ -43,7 +43,7 @@
 " => Key-bindings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let mapleader=" "           " mapped leader to <space>
-xnoremap <C-q> <nop>            " this should cancel the ctrl+q mapping
+nnoremap <C-q> <nop>            " this should cancel the ctrl+q mapping
 " this lets you visualy select and move lines with <shift>
 xnoremap K :move '<-2<CR>gv-gv
 xnoremap J :move '>+1<CR>gv-gv
