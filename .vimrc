@@ -28,7 +28,6 @@
    Plugin 'itchyny/lightline.vim'                       " Lightline statusbar
    Plugin 'tpope/vim-commentary'                        " use gcc to comment out
    Plugin 'ryanoasis/vim-devicons'                      " Icons for Nerdtree
-   " Plugin 'ascenator/L9', {'name': 'newL9'}
 
 
 
