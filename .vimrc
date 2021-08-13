@@ -11,7 +11,6 @@
 
    Plugin 'tpope/vim-fugitive'
    Plugin 'vim-lastplace'                               " remembers last place edited
-   Plugin 'francoiscabrol/ranger.vim'
    Plugin 'rbgrouleff/bclose.vim'
    Plugin 'scrooloose/nerdtree'                         " Nerdtree
    Plugin 'git://git.wincent.com/command-t.git'         " file fuzzy finder
