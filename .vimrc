@@ -9,7 +9,7 @@
 
       " Keep Plugin commands between vundle#begin/end.
 
-   Plugin 'tpope/vim-fugitive'
+   Plugin 'tpope/vim-fugitive'                          " access to git repo commands
    Plugin 'vim-lastplace'                               " remembers last place edited
    Plugin 'rbgrouleff/bclose.vim'
    Plugin 'scrooloose/nerdtree'                         " Nerdtree
