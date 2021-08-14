@@ -5,10 +5,9 @@
    " set the runtime path to include Vundle and initialize
    set rtp+=~/.vim/bundle/Vundle.vim
    call vundle#begin()
-   Plugin 'VundleVim/Vundle.vim'
 
-      " Keep Plugin commands between vundle#begin/end.
 
+   Plugin 'VundleVim/Vundle.vim'                        " Keep Plugin between vundle#begin/end.
    Plugin 'tpope/vim-fugitive'                          " access to git repo commands
    Plugin 'vim-lastplace'                               " remembers last place edited
    Plugin 'rbgrouleff/bclose.vim'
