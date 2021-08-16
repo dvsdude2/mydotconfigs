@@ -6,26 +6,25 @@
    set rtp+=~/.vim/bundle/Vundle.vim
    call vundle#begin()
 
-
    Plugin 'VundleVim/Vundle.vim'                        " Keep Plugin between vundle#begin/end.
-   Plugin 'tpope/vim-fugitive'                          " access to git repo commands
-   Plugin 'vim-lastplace'                               " remembers last place edited
+   Plugin 'tpope/vim-fugitive'                          " Access to git repo commands
    Plugin 'rbgrouleff/bclose.vim'
    Plugin 'scrooloose/nerdtree'                         " Nerdtree
-   Plugin 'git://git.wincent.com/command-t.git'         " file fuzzy finder
+   Plugin 'git://git.wincent.com/command-t.git'         " File fuzzy finder
    Plugin 'romgrk/doom-one.vim'                         " Doom theme
    Plugin 'gmarik/vundle'                               " Vundle manage Vundle
    Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-   Plugin 'vimwiki/vimwiki'                             " vim wiki note taking
+   Plugin 'vimwiki/vimwiki'                             " Vim wiki note taking
+   Plugin 'vim-lastplace'                               " Remembers last place edited
 "{{ Syntax Highlighting and Colors }}
    Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'     " Highlighting Nerdtree
-   Plugin 'PotatoesMaster/i3-vim-syntax'                " i3 config highlight
-   Plugin 'kovetskiy/sxhkd-vim'                         " sxhkd highlighting
-   Plugin 'vim-python/python-syntax'                    " Python highlighting
+   Plugin 'PotatoesMaster/i3-vim-syntax'                " Highlighting i3 config
+   Plugin 'kovetskiy/sxhkd-vim'                         " Highlighting Sxhkd
+   Plugin 'vim-python/python-syntax'                    " Highlighting Python
    Plugin 'ap/vim-css-color'                            " Color previews for CSS
    Plugin 'itchyny/lightline.vim'                       " Lightline statusbar
-   Plugin 'tpope/vim-commentary'                        " use gcc to comment out
-   Plugin 'ryanoasis/vim-devicons'                      " Icons for Nerdtree
+   Plugin 'tpope/vim-commentary'                        " Comment out lines use gcc
+   Plugin 'ryanoasis/vim-devicons'                      " Icons for Nerdtree (*last)
 
 
 
