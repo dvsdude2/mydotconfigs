@@ -8,7 +8,7 @@
 
    Plugin 'VundleVim/Vundle.vim'                        " Keep Plugin between vundle#begin/end.
    Plugin 'tpope/vim-fugitive'                          " Access to git repo commands
-   Plugin 'rbgrouleff/bclose.vim'
+   Plugin 'rbgrouleff/bclose.vim'                       " buffer delete not closing window
    Plugin 'scrooloose/nerdtree'                         " Nerdtree
    Plugin 'git://git.wincent.com/command-t.git'         " File fuzzy finder
    Plugin 'romgrk/doom-one.vim'                         " Doom theme
@@ -43,6 +43,7 @@ let mapleader=" "           " mapped leader to <space>
 " this lets you visualy select and move lines with <shift>
 xnoremap K :move '<-2<CR>gv-gv
 xnoremap J :move '>+1<CR>gv-gv
+map <Leader>bd :Bclose<CR>	      " Kills buffer not window
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General Settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -66,8 +67,8 @@ let g:rehash256 = 1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " The lightline.vim theme
 let g:lightline = {
-      \ 'colorscheme': 'darcula',
-      \ }
+	  \ 'colorscheme': 'darcula',
+	  \ }
 
 " Always show statusline
 set laststatus=2
@@ -159,7 +160,7 @@ set fillchars+=vert:\
 " => VimWiki
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:vimwiki_list = [{'path': '~/vimwiki/',
-                      \ 'syntax': 'markdown', 'ext': '.md'}]
+					  \ 'syntax': 'markdown', 'ext': '.md'}]
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Vim-Instant-Markdown
