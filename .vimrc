@@ -7,13 +7,13 @@
    call vundle#begin()
 
    Plugin 'VundleVim/Vundle.vim'                        " Keep Plugin between vundle#begin/end.
+   Plugin 'gmarik/vundle'                               " Vundle manage Vundle
    Plugin 'tpope/vim-fugitive'                          " Access to git repo commands
    Plugin 'rbgrouleff/bclose.vim'                       " buffer delete not closing window
    Plugin 'scrooloose/nerdtree'                         " Nerdtree
    Plugin 'git://git.wincent.com/command-t.git'         " File fuzzy finder
-   Plugin 'romgrk/doom-one.vim'                         " Doom theme
-   Plugin 'gmarik/vundle'                               " Vundle manage Vundle
    Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}           " Write HTML fast
+   Plugin 'iamcco/markdown-preview.nvim'                " Markdown preview
    Plugin 'vimwiki/vimwiki'                             " Vim wiki note taking
    Plugin 'vim-lastplace'                               " Remembers last place edited
 "{{ Syntax Highlighting and Colors }}
@@ -21,6 +21,7 @@
    Plugin 'PotatoesMaster/i3-vim-syntax'                " Highlighting i3 config
    Plugin 'kovetskiy/sxhkd-vim'                         " Highlighting Sxhkd
    Plugin 'vim-python/python-syntax'                    " Highlighting Python
+   Plugin 'romgrk/doom-one.vim'                         " Doom theme
    Plugin 'ap/vim-css-color'                            " Color previews for CSS
    Plugin 'itchyny/lightline.vim'                       " Lightline statusbar
    Plugin 'tpope/vim-commentary'                        " Comment out lines use gcc
@@ -35,7 +36,7 @@
    filetype plugin indent on    " required
    " To ignore plugin indent changes, instead use:
    "filetype plugin on
-
+   " Put your non-Plugin stuff after this line
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Key-bindings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
