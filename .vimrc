@@ -13,7 +13,7 @@
    Plugin 'git://git.wincent.com/command-t.git'         " File fuzzy finder
    Plugin 'romgrk/doom-one.vim'                         " Doom theme
    Plugin 'gmarik/vundle'                               " Vundle manage Vundle
-   Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+   Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}           " Write HTML fast
    Plugin 'vimwiki/vimwiki'                             " Vim wiki note taking
    Plugin 'vim-lastplace'                               " Remembers last place edited
 "{{ Syntax Highlighting and Colors }}
