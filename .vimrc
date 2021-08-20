@@ -164,12 +164,14 @@ let g:vimwiki_list = [{'path': '~/vimwiki/',
 					  \ 'syntax': 'markdown', 'ext': '.md'}]
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Vim-Instant-Markdown
+" => Markdown-Preview
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:instant_markdown_autostart = 0         " Turns off auto preview
-let g:instant_markdown_browser = "surf"      " Uses surf for preview
-map <Leader>md :InstantMarkdownPreview<CR>   " Previews .md file
-map <Leader>ms :InstantMarkdownStop<CR>      " Kills the preview
+let g:mkdp_auto_start = 0                    " Turns off auto preview
+" specify browser to open preview page       " default= ''
+let g:mkdp_browser = 'surf'                  " Uses surf for preview
+nmap <Leader>mk <Plug>MarkdownPreview        " Previews .md files
+nmap <Leader>nm <Plug>MarkdownPreviewStop    " Kills the preview
+nmap <Leader>mp <Plug>MarkdownPreviewToggle  " Preview toggle
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Other Stuff
