@@ -28,23 +28,29 @@
    Plugin 'ryanoasis/vim-devicons'                      " Icons for Nerdtree (*last)
 
 
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+" Brief help
 
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
 
-   " All of your Plugins must be added before the following line
-   call vundle#end()            " required
+" see :h vundle for more details or wiki for FAQ
 
-   filetype plugin indent on    " required
-   " To ignore plugin indent changes, instead use:
-   "filetype plugin on
-   " Put your non-Plugin stuff after this line
+         " Put your non-Plugin stuff after this line
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Key-bindings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let mapleader=" "           " mapped leader to <space>
+let mapleader=" "                   " mapped leader to <space>
+map <Leader>bd :Bclose<CR>          " Kills buffer not window
 " this lets you visualy select and move lines with <shift>
 xnoremap K :move '<-2<CR>gv-gv
 xnoremap J :move '>+1<CR>gv-gv
-map <Leader>bd :Bclose<CR>	      " Kills buffer not window
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General Settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -68,8 +74,8 @@ let g:rehash256 = 1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " The lightline.vim theme
 let g:lightline = {
-	  \ 'colorscheme': 'darcula',
-	  \ }
+      \ 'colorscheme': 'darcula',
+      \ }
 
 " Always show statusline
 set laststatus=2
@@ -161,7 +167,7 @@ set fillchars+=vert:\
 " => VimWiki
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:vimwiki_list = [{'path': '~/vimwiki/',
-					  \ 'syntax': 'markdown', 'ext': '.md'}]
+      \ 'syntax': 'markdown', 'ext': '.md'}]
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Markdown-Preview
