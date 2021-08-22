@@ -46,7 +46,7 @@ filetype plugin indent on    " required
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Key-bindings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let mapleader=" "                   " mapped leader to <space>
+let mapleader="/"                   " mapped leader to <space>
 map <Leader>bd :Bclose<CR>          " Kills buffer not window
 nmap <leader>w :w!<cr>		        " fast saving
 
@@ -57,6 +57,7 @@ xnoremap J :move '>+1<CR>gv-gv
 " => Fast editing and reloading of vimrc configs
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 map <leader>ev :e! ~/.vimrc<cr>
+map <leader>s :source ~/.vimrc<cr>
 autocmd! bufwritepost ~/.vimrc source ~/.vimrc
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General Settings
