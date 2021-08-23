@@ -10,7 +10,7 @@ the plan is to use these settings for any new builds in future.
 
 ## Installation
 
-use git [git](https://git-scm.com/) to clone
+use  [**git**  ](https://git-scm.com/) to clone
 
 ```bash
 git clone https://github.com/dvsdude2/my.dotconfigs.git
