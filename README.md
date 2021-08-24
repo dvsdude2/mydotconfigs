@@ -1,7 +1,10 @@
-<h1 style="text-align: center;">my.dotconfigs</h1>
+
+| |
+| :-: |
+|<h1 style="text-align: center;">my.dotconfigs</h1>
 
 
-<p style="text-align: center;">project-description</p>
+<h2 style="text-align: center;">project-description</h2>
 
 # more than just dotconfigs
 
