@@ -1,6 +1,10 @@
-<h1 align="center"><my.dotconfigs></h1>
 
-<p align="center"><project-description></p>
+| |
+| :-: |
+|<h1 style="text-align: center;">my.dotconfigs</h1>
+
+
+<h2 style="text-align: center;">project-description</h2>
 
 # more than just dotconfigs
 
@@ -10,7 +14,7 @@ the plan is to use these settings for any new builds in future.
 
 ## Installation
 
-use [**git**  ](https://git-scm.com/img.png "download git") to clone
+use [**git**  ](https://git-scm.com/ "download git") to clone
 
 ```python
 git clone https://github.com/dvsdude2/my.dotconfigs.git
