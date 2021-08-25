@@ -2,13 +2,13 @@
 
 
 **<h3 style="text-align: center;">DVS.DOTCONFIGS</h3>**                      
-===================================
 
-**<h3 style="text-align: center;">project-description</h3>**
+
+**<h3 style="text-align: center;">description</h3>**
 _______________________________
 #### More than just dotconfigs
 
-    keep configs to save the work I put into making them.
+keep configs to save the work I put into making them.
 plan on keeping a lot of my arch set up here. so not all config files
 the plan is to use these settings for any new builds in future.
 
