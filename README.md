@@ -11,7 +11,7 @@ _______________________________
 keep configs to save the work I put into making them.
 plan on keeping a lot of my arch set up here. so not all config files
 the plan is to use these settings for any new builds in future.
-what ev
+
 
 #### Installation
 ________________________________
@@ -20,7 +20,7 @@ use [**git**  ](https://git-scm.com/ "download git") to clone
 ```python
 git clone https://github.com/dvsdude2/my.dotconfigs.git
 ```
-________________________________
+
 #### Usage
 ________________________________
 after clean install of a new ISO
