@@ -8,9 +8,9 @@
 _______________________________
 #### More than just dotconfigs
 
-keep configs to save the work I put into making them.
-plan on keeping a lot of my arch set up here. so not all config files
-the plan is to use these settings for any new builds in future.
+    keep configs to save the work I put into making them.
+    plan on keeping a lot of my arch set up here. so not all config files
+    the plan is to use these settings for any new builds in future.
 
 
 #### Installation
@@ -23,8 +23,8 @@ git clone https://github.com/dvsdude2/my.dotconfigs.git
 
 #### Usage
 ________________________________
-after clean install of a new ISO
-use these files to get back all the customizing
+    after clean install of a new ISO
+    use these files to get back all the customizing
 
 #### Contributing
 ________________________________
