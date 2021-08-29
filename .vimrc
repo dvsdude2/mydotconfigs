@@ -46,15 +46,16 @@ filetype plugin indent on    " required
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Key-bindings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let mapleader="/"                   " mapped leader to <space>
-map <Leader>bd :Bclose<CR>          " Kills buffer not window
-nmap <leader>w :w!<cr>		        " fast saving
-" this lets you visualy select and move lines with <shift>
-xnoremap K :move '<-2<CR>gv-gv
-xnoremap J :move '>+1<CR>gv-gv
+let mapleader="/"                   " mapped leader to </>
   " move vertically by visual line (don't skip wrapped lines)
 nmap k gk
 nmap j gj
+nmap <leader>w :w!<cr>		          " fast saving
+nnoremap Q :Bclose<CR>                " should kill buffer
+	" visualy select & move lines with <shift>
+xnoremap K :move '<-2<CR>gv-gv
+xnoremap J :move '>+1<CR>gv-gv
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Fast editing and reloading of vimrc configs
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
