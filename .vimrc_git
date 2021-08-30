@@ -6,13 +6,13 @@
    set rtp+=~/.vim/bundle/Vundle.vim
    call vundle#begin()
 
-   Plugin 'VundleVim/Vundle.vim'                        " Keep Plugin between vundle#begin/end.
+   Plugin 'VundleVim/Vundle.vim'                        " Keep Plugins between vundle#begin/end.
    Plugin 'gmarik/vundle'                               " Vundle manage Vundle
    Plugin 'tpope/vim-fugitive'                          " Access to git repo commands
    Plugin 'rbgrouleff/bclose.vim'                       " buffer delete not closing window
    Plugin 'scrooloose/nerdtree'                         " Nerdtree
    Plugin 'git://git.wincent.com/command-t.git'         " File fuzzy finder
-   Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}           " Write HTML fast
+   Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}           " Write HTML faster
    Plugin 'iamcco/markdown-preview.nvim'                " Markdown preview
    Plugin 'vimwiki/vimwiki'                             " Vim wiki note taking
    Plugin 'vim-lastplace'                               " Remembers last place edited
@@ -46,7 +46,7 @@ filetype plugin indent on    " required
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Key-bindings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let mapleader="/"                   " mapped leader to </>
+let mapleader="/"                     " mapped leader to </>
   " move vertically by visual line (don't skip wrapped lines)
 nmap k gk
 nmap j gj
@@ -59,7 +59,7 @@ xnoremap J :move '>+1<CR>gv-gv
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Fast editing and reloading of vimrc configs
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <leader>ev :e! ~/.vimrc<cr>
+map <leader>e :e! ~/.vimrc<cr>
 map <leader>s :source ~/.vimrc<cr>
 autocmd! bufwritepost ~/.vimrc source ~/.vimrc
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -178,7 +178,7 @@ set fillchars+=vert:\
 " => VimWiki
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:vimwiki_list = [{'path': '~/vimwiki/',
-      \ 'syntax': 'markdown', 'ext': '.md'}]
+                      \ 'syntax': 'markdown', 'ext': '.md'}]
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Markdown-Preview
