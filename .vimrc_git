@@ -5,8 +5,9 @@
    " set the runtime path to include Vundle and initialize
    set rtp+=~/.vim/bundle/Vundle.vim
    call vundle#begin()
+   " Keep Plugins between vundle#begin/end.
 
-   Plugin 'VundleVim/Vundle.vim'                        " Keep Plugins between vundle#begin/end.
+   Plugin 'VundleVim/Vundle.vim'                        " Plugin manager 
    Plugin 'gmarik/vundle'                               " Vundle manage Vundle
    Plugin 'tpope/vim-fugitive'                          " Access to git repo commands
    Plugin 'rbgrouleff/bclose.vim'                       " buffer delete not closing window
