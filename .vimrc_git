@@ -63,6 +63,10 @@ map <leader>e :e! ~/.vimrc<cr>
 map <leader>s :source ~/.vimrc<cr>
 autocmd! bufwritepost ~/.vimrc source ~/.vimrc
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => search and replace selected text
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General Settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set encoding=UTF-8
