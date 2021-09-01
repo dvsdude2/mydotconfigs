@@ -33,16 +33,16 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
-" Brief help
+""""""""""""""""""""""""""""""""""""""""""""""
+" => Brief help
 """"""""""""""""""""""""""""""""""""""""""""""
 " :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!`
+" :PluginInstall    - installs plugins; append `!` to update
 " :PluginUpdate     - to update or just refresh
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-
+" :PluginClean      - confirms removal of unused plugins; `!` to auto-approve
 " see :h vundle for more details or wiki for FAQ
 
-         " Put your non-Plugin stuff after this line
+" Put your non-Plugin stuff after this line
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Key-bindings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
