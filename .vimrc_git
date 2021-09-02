@@ -7,24 +7,19 @@ call vundle#begin()
 " Keep Plugins between vundle#begin/end.
 
    Plugin 'VundleVim/Vundle.vim'                        " Plugin manager
-   Plugin 'gmarik/vundle'                               " Vundle manage Vundle
+   Plugin 'godlygeek/tabular'                           " align text
    Plugin 'tpope/vim-fugitive'                          " Access to git repo commands
-   Plugin 'rbgrouleff/bclose.vim'                       " buffer delete not closing window
+   Plugin 'jlanzarotta/bufexplorer'                     " Buffer Explorer
    Plugin 'scrooloose/nerdtree'                         " Nerdtree
-   Plugin 'git://git.wincent.com/command-t.git'         " File fuzzy finder
-   Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}           " Write HTML faster
    Plugin 'iamcco/markdown-preview.nvim'                " Markdown preview
    Plugin 'vimwiki/vimwiki'                             " Vim wiki note taking
    Plugin 'vim-lastplace'                               " Remembers last place edited
 "{{ Syntax Highlighting and Colors }}
    Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'     " Highlighting Nerdtree
-   Plugin 'PotatoesMaster/i3-vim-syntax'                " Highlighting i3 config
-   Plugin 'kovetskiy/sxhkd-vim'                         " Highlighting Sxhkd
    Plugin 'vim-python/python-syntax'                    " Highlighting Python
-   Plugin 'romgrk/doom-one.vim'                         " Doom theme
    Plugin 'ap/vim-css-color'                            " Color previews for CSS
    Plugin 'itchyny/lightline.vim'                       " Lightline statusbar
-   Plugin 'tpope/vim-commentary'                        " Comment out lines use gcc
+   Plugin 'preservim/nerdcommenter'                     " Comment toggle
    Plugin 'ryanoasis/vim-devicons'                      " Icons for Nerdtree (*last)
 
 
