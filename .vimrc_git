@@ -1,6 +1,7 @@
 
 set nocompatible                                       " be iMproved, required
 filetype off                                           " required
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -9,6 +10,7 @@ call vundle#begin()
    Plugin 'VundleVim/Vundle.vim'                        " Plugin manager
    Plugin 'godlygeek/tabular'                           " align text
    Plugin 'tpope/vim-fugitive'                          " Access to git repo commands
+   Plugin 'jreybert/vimagit'                            " Emacs magit for vim
    Plugin 'jlanzarotta/bufexplorer'                     " Buffer Explorer
    Plugin 'scrooloose/nerdtree'                         " Nerdtree
    Plugin 'iamcco/markdown-preview.nvim'                " Markdown preview
@@ -155,6 +157,9 @@ highlight Function         ctermfg=1    ctermbg=none    cterm=none
 " => Splits and Tabbed Files
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set splitbelow splitright
+set expandtab                   " Use spaces instead of tabs.
+set shiftwidth=4                " One tab == four spaces.
+set tabstop=4                   " One tab == four spaces.
 
 " Remap splits navigation to just CTRL + hjkl
 nnoremap <C-h> <C-w>h
