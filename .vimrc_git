@@ -203,3 +203,8 @@ nmap <Leader>mp <Plug>MarkdownPreviewToggle  " Preview toggle
 " => Other Stuff
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:python_highlight_all = 1
+
+set guioptions-=m  "remove menu bar
+set guioptions-=T  "remove toolbar
+set guioptions-=r  "remove right-hand scroll bar
+set guioptions-=L  "remove left-hand scroll bar
