@@ -35,11 +35,11 @@ filetype plugin indent on    " required
 """"""""""""""""""""""""""""""""""""""""""""""
 " :PluginList       - lists configured plugins
 " :PluginInstall    - installs plugins; append `!` to update
-" :PluginUpdate     - to update or just refresh
+" :PluginUpdate     - to update or refresh
 " :PluginClean      - confirms removal of unused plugins; `!` to auto-approve
 " see :h vundle for more details or wiki for FAQ
 
-" Put your non-Plugin stuff after this line
+         " Put your non-Plugin stuff after this line
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Key-bindings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -79,7 +79,7 @@ set t_Co=256                    " Set if term supports 256 colors.
 set number                      " Display line numbers
 set relativenumber              " Display line numbers
 set clipboard=unnamedplus       " Copy/paste between vim and other programs.
-set so=7
+set so=7                        " Keep 7 lines visable when scrolling
 set background=dark
 set termguicolors
 syntax enable
@@ -167,10 +167,10 @@ set shiftwidth=4                " One tab == four spaces.
 set tabstop=4                   " One tab == four spaces.
 
 " Remap splits navigation to just CTRL + hjkl
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
+nnoremap <C-h> <C-w>h           " focus moves left
+nnoremap <C-j> <C-w>j           " focus moves down
+nnoremap <C-k> <C-w>k           " focus moves up
+nnoremap <C-l> <C-w>l           " focus moves right
 " Make adjusing split sizes a bit more friendly
 noremap <silent> <C-Left> :vertical resize +3<CR>
 noremap <silent> <C-Right> :vertical resize -3<CR>
