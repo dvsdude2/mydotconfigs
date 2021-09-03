@@ -79,8 +79,13 @@ set t_Co=256                    " Set if term supports 256 colors.
 set number                      " Display line numbers
 set relativenumber              " Display line numbers
 set clipboard=unnamedplus       " Copy/paste between vim and other programs.
+set so=7
+set background=dark
+set termguicolors
 syntax enable
 let g:rehash256 = 1
+hi! Normal ctermbg=NONE guibg=NONE
+hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Status Line
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
