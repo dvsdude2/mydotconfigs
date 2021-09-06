@@ -8,22 +8,23 @@ call vundle#begin()
 " Keep Plugins between vundle#begin/end.
 
    Plugin 'VundleVim/Vundle.vim'                        " Plugin manager
+   Plugin 'ctrlpvim/ctrlp.vim'                          " Fuzzy file finder 
    Plugin 'godlygeek/tabular'                           " align text
    Plugin 'tpope/vim-fugitive'                          " Access to git repo commands
    Plugin 'jreybert/vimagit'                            " Emacs magit for vim
+   Plugin 'tpope/vim-commentary'                        " Comment out lines
    Plugin 'jlanzarotta/bufexplorer'                     " Buffer Explorer
    Plugin 'scrooloose/nerdtree'                         " Nerdtree
    Plugin 'iamcco/markdown-preview.nvim'                " Markdown preview
    Plugin 'vimwiki/vimwiki'                             " Vim wiki note taking
+   Plugin 'neoclide/coc.nvim', {'branch': 'release'}
    Plugin 'vim-lastplace'                               " Remembers last place edited
 "{{ Syntax Highlighting and Colors }}
    Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'     " Highlighting Nerdtree
    Plugin 'vim-python/python-syntax'                    " Highlighting Python
    Plugin 'ap/vim-css-color'                            " Color previews for CSS
    Plugin 'itchyny/lightline.vim'                       " Lightline statusbar
-   Plugin 'preservim/nerdcommenter'                     " Comment toggle
    Plugin 'ryanoasis/vim-devicons'                      " Icons for Nerdtree (*last)
-
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
