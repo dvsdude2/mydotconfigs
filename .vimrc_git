@@ -42,18 +42,21 @@ filetype plugin indent on    " required
 
          " Put your non-Plugin stuff after this line
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Key-bindings
+" => Key-bindings *note- leave right uncommeted,seen as command
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let mapleader="/"                     " mapped leader to </>
-  " move vertically by visual line (don't skip wrapped lines)
-nmap k gk
-nmap j gj
-nmap <leader>w :w!<cr>		          " fast saving
-nnoremap Q :Bclose<CR>                " should kill buffer
-	" visualy select & move lines with <shift>
+" mapped leader to <space>
+let mapleader=" "                     
+" move vertically by visual line (don't skip wrapped lines)
+nnoremap k gk
+nnoremap j gj
+noremap <Up> gk
+noremap <Down> gj
+" open command edit window everytime
+nnoremap : q:i
+nnoremap / q/i
+" visualy select & move lines with <shift>
 xnoremap K :move '<-2<CR>gv-gv
 xnoremap J :move '>+1<CR>gv-gv
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Fast editing and reloading of vimrc configs
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
