@@ -8,7 +8,7 @@ call vundle#begin()
 " Keep Plugins between vundle#begin/end.
 
    Plugin 'VundleVim/Vundle.vim'                        " Plugin manager
-   Plugin 'ctrlpvim/ctrlp.vim'                          " Fuzzy file finder 
+   Plugin 'ctrlpvim/ctrlp.vim'                          " Fuzzy file finder
    Plugin 'godlygeek/tabular'                           " align text
    Plugin 'tpope/vim-fugitive'                          " Access to git repo commands
    Plugin 'jreybert/vimagit'                            " Emacs magit for vim
@@ -45,7 +45,7 @@ filetype plugin indent on    " required
 " => Key-bindings *note- leave right uncommeted,seen as command
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " mapped leader to <space>
-let mapleader=" "                     
+let mapleader=" "
 " move vertically by visual line (don't skip wrapped lines)
 nnoremap k gk
 nnoremap j gj
@@ -60,13 +60,18 @@ xnoremap J :move '>+1<CR>gv-gv
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Fast editing and reloading of vimrc configs
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" sources .vimrc after every write or save
+autocmd! bufwritepost ~/.vimrc source ~/.vimrc
+nmap <leader>w :w!<cr>
 map <leader>e :e! ~/.vimrc<cr>
 map <leader>s :source ~/.vimrc<cr>
-autocmd! bufwritepost ~/.vimrc source ~/.vimrc
+nnoremap Q :Bclose<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => search and replace selected text
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
+" after search hit enter again to remove highlight
+nnoremap <silent> <CR> :nohlsearch<CR><CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General Settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
