@@ -62,10 +62,19 @@ xnoremap J :move '>+1<CR>gv-gv
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " sources .vimrc after every write or save
 autocmd! bufwritepost ~/.vimrc source ~/.vimrc
+" write to vimrc
 nmap <leader>w :w!<cr>
+" open vimrc
 map <leader>e :e! ~/.vimrc<cr>
+" source vimrc
 map <leader>s :source ~/.vimrc<cr>
+" quickly open a buffer for scribble
+map <leader>q :e ~/buffer<cr>
+" close buffer not window
 nnoremap Q :Bclose<CR>
+" Duplicate lines
+noremap <C-S-Up> YP
+noremap <C-S-Down> YP
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => search and replace selected text
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
