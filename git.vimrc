@@ -45,8 +45,8 @@ filetype plugin indent on    " required
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Key-bindings *note- leave right uncommeted,seen as command
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" mapped leader to <space>
-let mapleader=" "
+" mapped leader to <'>
+let mapleader="'"
 " move vertically by visual line (don't skip wrapped lines)
 nnoremap k gk
 nnoremap j gj
