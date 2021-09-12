@@ -7,21 +7,6 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " Keep Plugins between vundle#begin/end.
 
-<<<<<<< HEAD:vimrc_git
-   Plugin 'VundleVim/Vundle.vim'                        " Plugin manager
-   Plugin 'ctrlpvim/ctrlp.vim'                          " Fuzzy file finder
-   Plugin 'godlygeek/tabular'                           " align text
-   Plugin 'tpope/vim-fugitive'                          " Access to git repo commands
-   Plugin 'jreybert/vimagit'                            " Emacs magit for vim
-   Plugin 'tpope/vim-commentary'                        " Comment out lines
-   Plugin 'jlanzarotta/bufexplorer'                     " Buffer Explorer
-   Plugin 'rbgrouleff/bclose.vim'                       " buffer delete not closing window   
-   Plugin 'scrooloose/nerdtree'                         " Nerdtree
-   Plugin 'iamcco/markdown-preview.nvim'                " Markdown preview
-   Plugin 'vimwiki/vimwiki'                             " Vim wiki note taking
-   Plugin 'neoclide/coc.nvim', {'branch': 'release'}
-   Plugin 'vim-lastplace'                               " Remembers last place edited
-=======
    Plugin 'VundleVim/Vundle.vim'                       " Plugin manager
    Plugin 'ctrlpvim/ctrlp.vim'                         " Fuzzy file finder
    Plugin 'godlygeek/tabular'                          " Align text
@@ -35,7 +20,6 @@ call vundle#begin()
    Plugin 'vimwiki/vimwiki', { 'branch': 'dev' }       " Vim wiki note taking
    Plugin 'neoclide/coc.nvim', {'branch': 'release'}   " Line completion
    Plugin 'vim-lastplace'                              " Opens last place edited
->>>>>>> main:git.vimrc
 "{{ Syntax Highlighting and Colors }}
    Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'    " Highlighting Nerdtree
    Plugin 'vim-python/python-syntax'                   " Highlighting Python
