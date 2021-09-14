@@ -93,23 +93,27 @@ nnoremap <silent> <CR> :nohlsearch<CR><CR>
 " => General Settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set encoding=UTF-8
+set background=dark
+set termguicolors
+let g:rehash256 = 1
+syntax enable
 set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Nerd\ Font\ Complete\ 12
 set path+=**                    " Searches current directory recursively.
 set wildmenu                    " Display all matches when tab complete.
 set wildmode=longest,list,full  "should display commands
+set ignorecase                  " Case insensitive
 set incsearch                   " Incremental search
+set smartcase                   " Use case if anycaps used
+set hlsearch                    " Search highlighting
 set hidden                      " Needed to keep multiple buffers open
 set nobackup                    " No auto backups
 set noswapfile                  " No swap
-set t_Co=256                    " Set if term supports 256 colors.
 set number                      " Display line numbers
 set relativenumber              " Display line numbers
 set clipboard=unnamedplus       " Copy/paste between vim and other programs.
 set so=7                        " Keep 7 lines visable when scrolling
-set background=dark
-set termguicolors
-syntax enable
-let g:rehash256 = 1
+set history=999                 " Increase history (default = 20)
+set autoread                    " reload files if changed externally
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Status Line
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
