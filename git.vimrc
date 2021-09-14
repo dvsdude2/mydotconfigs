@@ -58,6 +58,13 @@ nnoremap / q/i
 " visualy select & move lines with <shift>
 xnoremap K :move '<-2<CR>gv-gv
 xnoremap J :move '>+1<CR>gv-gv
+" changes cursor to a bar when in insert mode 
+let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Open terminal inside Vim
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map <Leader>tt :vert term<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Fast editing and reloading of vimrc configs
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
