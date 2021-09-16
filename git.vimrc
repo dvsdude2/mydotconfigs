@@ -8,7 +8,6 @@ call vundle#begin()
 " Keep Plugins between vundle#begin/end.
 
    Plugin 'VundleVim/Vundle.vim'                       " Plugin manager
-   Plugin 'ctrlpvim/ctrlp.vim'                         " Fuzzy file finder
    Plugin 'godlygeek/tabular'                          " Align text
    Plugin 'tpope/vim-fugitive'                         " Allows git commands
    Plugin 'jreybert/vimagit'                           " Emacs magit for vim
