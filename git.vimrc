@@ -77,6 +77,8 @@ map <leader>e :e! ~/.vimrc<cr>
 map <leader>s :source ~/.vimrc<cr>
 " quickly open a buffer for scribble
 map <leader>q :e ~/buffer<cr>
+" quickly add ` around a word
+map \` i`<Esc>ea`<Esc>
 " close buffer not window
 nnoremap Q :Bclose<CR>
 " Duplicate lines
@@ -85,7 +87,11 @@ noremap <C-S-Down> YP
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => search and replace selected text
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" ctrl-r in v mod will be asked for replacment
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
+" press * or # to search for the current selection
+vnoremap <silent> * :call VisualSearch('f')<CR>
+vnoremap <silent> # :call VisualSearch('b')<CR>
 " after search hit enter again to remove highlight
 nnoremap <silent> <CR> :nohlsearch<CR><CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
