@@ -84,6 +84,9 @@ nnoremap Q :Bclose<CR>
 " Duplicate lines
 noremap <C-S-Up> YP
 noremap <C-S-Down> YP
+" Jump to the start or end of line without leaving the home row
+noremap H ^
+noremap L $
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => search and replace selected text
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -215,6 +218,21 @@ map <Leader>tk <C-w>t<C-w>K
 
 " Removes pipes | that act as seperators on splits
 set fillchars+=vert:\
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => COC plugin settings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" don't pass messages to |ins-completion-menu|. 
+set shortmess+=c 
+" Use <cr> to confirm completion
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+" To make <cr> select the first completion item
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
+" use tab to make selections ...was taken down for debugging
+inoremap <silent><expr> <Tab>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<Tab>" :
+      \ coc#refresh()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VimWiki
