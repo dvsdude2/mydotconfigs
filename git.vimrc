@@ -4,8 +4,8 @@ filetype off                                           " required
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
 " Keep Plugins between vundle#begin/end.
+call vundle#begin()
 
    Plugin 'VundleVim/Vundle.vim'                       " Plugin manager
    Plugin 'godlygeek/tabular'                          " Align text
@@ -26,7 +26,6 @@ call vundle#begin()
    Plugin 'itchyny/lightline.vim'                      " Lightline statusbar
    Plugin 'ryanoasis/vim-devicons'                     " Icons for Nerdtree (*last)
 
-" All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
@@ -41,62 +40,6 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 
          " Put your non-Plugin stuff after this line
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Key-bindings *note- leave right uncommeted,seen as command
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" mapped leader to <'>
-let mapleader="'"
-" move vertically by visual line (don't skip wrapped lines)
-nnoremap k gk
-nnoremap j gj
-noremap <Up> gk
-noremap <Down> gj
-" open command edit window everytime
-nnoremap : q:i
-nnoremap / q/i
-" visualy select & move lines with <shift>
-xnoremap K :move '<-2<CR>gv-gv
-xnoremap J :move '>+1<CR>gv-gv
-" changes cursor to a bar when in insert mode 
-let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Open terminal inside Vim
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <Leader>tt :vert term<CR>
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Fast editing and reloading of vimrc configs
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" sources .vimrc after every write or save
-autocmd! bufwritepost ~/.vimrc source ~/.vimrc
-" write to vimrc
-nmap <leader>w :w!<cr>
-" open vimrc
-map <leader>e :e! ~/.vimrc<cr>
-" source vimrc
-map <leader>s :source ~/.vimrc<cr>
-" quickly open a buffer for scribble
-map <leader>q :e ~/buffer<cr>
-" quickly add ` around a word
-map \` i`<Esc>ea`<Esc>
-" close buffer not window
-nnoremap Q :Bclose<CR>
-" Duplicate lines
-noremap <C-S-Up> YP
-noremap <C-S-Down> YP
-" Jump to the start or end of line without leaving the home row
-noremap H ^
-noremap L $
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => search and replace selected text
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" ctrl-r in v mod will be asked for replacment
-vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
-" press * or # to search for the current selection
-vnoremap <silent> * :call VisualSearch('f')<CR>
-vnoremap <silent> # :call VisualSearch('b')<CR>
-" after search hit enter again to remove highlight
-nnoremap <silent> <CR> :nohlsearch<CR><CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General Settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -123,30 +66,86 @@ set so=7                        " Keep 7 lines visable when scrolling
 set history=999                 " Increase history (default = 20)
 set autoread                    " reload files if changed externally
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Status Line
+" => Key-bindings *note- leave right uncommeted,seen as command
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" The lightline.vim theme
-let g:lightline = {
-      \ 'colorscheme': 'deus',
-      \ }
+" mapped leader to <'>
+let mapleader="'"
+" move vertically by visual line (don't skip wrapped lines)
+nnoremap k gk
+nnoremap j gj
+noremap <Up> gk
+noremap <Down> gj
+" changes cursor to a bar when in insert mode 
+let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+" open command edit window everytime
+nnoremap : q:i
+nnoremap / q/i
+" => Open terminal inside Vim
+map <Leader>tt :vert term<CR>
+" quickly open a buffer for scribble
+map <leader>q :e ~/buffer<cr>
+" close buffer not window
+nnoremap Q :Bclose<CR>
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Text editing
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Quick write to file 
+nmap <leader>w :w!<cr>
+" visualy select & move lines with <shift>
+xnoremap K :move '<-2<CR>gv-gv
+xnoremap J :move '>+1<CR>gv-gv
+" quickly add ` around a word
+map \` i`<Esc>ea`<Esc>
+" Duplicate lines
+noremap <C-S-Up> YP
+noremap <C-S-Down> YP
+" Jump to the start or end of line without leaving the home row
+noremap H ^
+noremap L $
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Fast editing and reloading of vimrc configs
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" sources .vimrc after every write or save
+autocmd! bufwritepost ~/.vimrc source ~/.vimrc
+" open vimrc
+map <leader>e :e! ~/.vimrc<cr>
+" source vimrc
+map <leader>s :source ~/.vimrc<cr>
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => search and replace selected text
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" ctrl-r in v mod will be asked for replacment
+vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
+" press * or # to search for the current selection
+vnoremap <silent> * :call VisualSearch('f')<CR>
+vnoremap <silent> # :call VisualSearch('b')<CR>
+" after search hit enter again to remove highlight
+nnoremap <silent> <CR> :nohlsearch<CR><CR>
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Splits and Tabbed Files
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set splitbelow splitright
+set expandtab                   " Use spaces instead of tabs.
+set shiftwidth=4                " One tab == four spaces.
+set tabstop=4                   " One tab == four spaces.
 
-" Always show statusline
-set laststatus=2
+" Remap splits navigation to just CTRL + hjkl
+nnoremap <C-h> <C-w>h           " focus moves left
+nnoremap <C-j> <C-w>j           " focus moves down
+nnoremap <C-k> <C-w>k           " focus moves up
+nnoremap <C-l> <C-w>l           " focus moves right
+" Make adjusing split sizes a bit more friendly
+noremap <silent> <C-Left> :vertical resize +3<CR>
+noremap <silent> <C-Right> :vertical resize -3<CR>
+noremap <silent> <C-Up> :resize +3<CR>
+noremap <silent> <C-Down> :resize -3<CR>
+"" Change 2 split windows from vert to horiz or horiz to vert
+map <Leader>th <C-w>t<C-w>H
+map <Leader>tk <C-w>t<C-w>K
 
-" Uncomment to prevent non-normal modes showing in powerline and below powerline.
-set noshowmode
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => NERDTree
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Uncomment to autostart the NERDTree
-" autocmd vimenter * NERDTree
-map <C-n> :NERDTreeToggle<CR>
-let g:NERDTreeDirArrowExpandable = '►'
-let g:NERDTreeDirArrowCollapsible = '▼'
-let NERDTreeShowLineNumbers=1
-let NERDTreeShowHidden=1
-let NERDTreeMinimalUI = 1
-let g:NERDTreeWinSize=38
+" Removes pipes | that act as seperators on splits
+set fillchars+=vert:\
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Theming
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -195,30 +194,17 @@ highlight Function         ctermfg=1    ctermbg=none    cterm=none
 " highlight xmlEndTag        ctermfg=114     ctermbg=none    cterm=none
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Splits and Tabbed Files
+" => NERDTree
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set splitbelow splitright
-set expandtab                   " Use spaces instead of tabs.
-set shiftwidth=4                " One tab == four spaces.
-set tabstop=4                   " One tab == four spaces.
-
-" Remap splits navigation to just CTRL + hjkl
-nnoremap <C-h> <C-w>h           " focus moves left
-nnoremap <C-j> <C-w>j           " focus moves down
-nnoremap <C-k> <C-w>k           " focus moves up
-nnoremap <C-l> <C-w>l           " focus moves right
-" Make adjusing split sizes a bit more friendly
-noremap <silent> <C-Left> :vertical resize +3<CR>
-noremap <silent> <C-Right> :vertical resize -3<CR>
-noremap <silent> <C-Up> :resize +3<CR>
-noremap <silent> <C-Down> :resize -3<CR>
-"" Change 2 split windows from vert to horiz or horiz to vert
-map <Leader>th <C-w>t<C-w>H
-map <Leader>tk <C-w>t<C-w>K
-
-" Removes pipes | that act as seperators on splits
-set fillchars+=vert:\
-
+" Uncomment to autostart the NERDTree
+" autocmd vimenter * NERDTree
+map <C-n> :NERDTreeToggle<CR>
+let g:NERDTreeDirArrowExpandable = '►'
+let g:NERDTreeDirArrowCollapsible = '▼'
+let NERDTreeShowLineNumbers=1
+let NERDTreeShowHidden=1
+let NERDTreeMinimalUI = 1
+let g:NERDTreeWinSize=38
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => COC plugin settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -250,6 +236,19 @@ nmap <Leader>mk <Plug>MarkdownPreview        " Previews .md files
 nmap <Leader>nm <Plug>MarkdownPreviewStop    " Kills the preview
 nmap <Leader>mp <Plug>MarkdownPreviewToggle  " Preview toggle
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Status Line
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" The lightline.vim theme
+let g:lightline = {
+      \ 'colorscheme': 'deus',
+      \ }
+
+" Always show statusline
+set laststatus=2
+
+" Uncomment to prevent non-normal modes showing in powerline and below powerline.
+set noshowmode
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Other Stuff
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
