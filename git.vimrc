@@ -91,7 +91,7 @@ nnoremap Q :Bclose<CR>
 " => Text editing
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Quick write to file 
-nmap <leader>w :w!<cr>
+map <leader>w :w!<cr>
 " visualy select & move lines with <shift>
 xnoremap K :move '<-2<CR>gv-gv
 xnoremap J :move '>+1<CR>gv-gv
@@ -129,21 +129,19 @@ set splitbelow splitright
 set expandtab                   " Use spaces instead of tabs.
 set shiftwidth=4                " One tab == four spaces.
 set tabstop=4                   " One tab == four spaces.
-
 " Remap splits navigation to just CTRL + hjkl
-nnoremap <C-h> <C-w>h           " focus moves left
-nnoremap <C-j> <C-w>j           " focus moves down
-nnoremap <C-k> <C-w>k           " focus moves up
-nnoremap <C-l> <C-w>l           " focus moves right
+nnoremap <C-h> <C-w>h           
+nnoremap <C-j> <C-w>j           
+nnoremap <C-k> <C-w>k           
+nnoremap <C-l> <C-w>l           
 " Make adjusing split sizes a bit more friendly
 noremap <silent> <C-Left> :vertical resize +3<CR>
 noremap <silent> <C-Right> :vertical resize -3<CR>
 noremap <silent> <C-Up> :resize +3<CR>
 noremap <silent> <C-Down> :resize -3<CR>
-"" Change 2 split windows from vert to horiz or horiz to vert
-map <Leader>th <C-w>t<C-w>H
-map <Leader>tk <C-w>t<C-w>K
-
+" Change 2 split windows from vert to horiz or horiz to vert
+nmap <Leader>th <C-w>t<C-w>H
+nmap <Leader>tk <C-w>t<C-w>K
 " Removes pipes | that act as seperators on splits
 set fillchars+=vert:\
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -220,34 +218,71 @@ inoremap <silent><expr> <Tab>
       \ <SID>check_back_space() ? "\<Tab>" :
       \ coc#refresh()
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VimWiki
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:vimwiki_list = [{'path': '~/vimwiki/',
                       \ 'syntax': 'markdown', 'ext': '.md'}]
 
+" this allows tab to work with coc menu selection 
+au filetype vimwiki silent! iunmap <buffer> <Tab>
+" set text to wrap at 89 characters 
+set textwidth=89 
+" this should highlight when line is overlenth
+augroup vimrc_autocmds
+  autocmd BufEnter * highlight OverLength ctermbg=darkgrey guibg=#592929
+  autocmd BufEnter * match OverLength /\%85v.*/
+augroup END
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Markdown-Preview
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:mkdp_auto_start = 0                    " Turns off auto preview
 " specify browser to open preview page       " default= ''
 let g:mkdp_browser = 'surf'                  " Uses surf for preview
-nmap <Leader>mk <Plug>MarkdownPreview        " Previews .md files
-nmap <Leader>nm <Plug>MarkdownPreviewStop    " Kills the preview
-nmap <Leader>mp <Plug>MarkdownPreviewToggle  " Preview toggle
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Previews .md files
+nmap <Leader>mk <Plug>MarkdownPreview        
+" Kills the preview
+nmap <Leader>nm <Plug>MarkdownPreviewStop    
+" Preview toggle
+nmap <Leader>mp <Plug>MarkdownPreviewToggle  
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Status Line
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " The lightline.vim theme
 let g:lightline = {
-      \ 'colorscheme': 'deus',
-      \ }
-
+    \ 'colorscheme': 'deus',
+    \ 'active': {
+    \   'left': [ [ 'mode', 'paste' ],
+    \             [ 'readonly', 'fugitive', 'filename', 'modified' ] ],
+    \   'right': [ [ 'lineinfo' ],
+      \              [ 'percent' ],
+      \              [ 'fileformat', 'fileencoding', 'filetype' ] ]
+    \ },
+    \ 'component': {
+    \   'lineinfo': ' %L  %3l:%-2v',
+    \   'modified': '[%M]'
+    \ },
+    \ 'component_function': {
+    \   'readonly': 'LightlineReadonly',
+    \   'fugitive': 'LightlineFugitive'
+    \ },
+    \ 'separator': { 'left': '', 'right': '' },
+    \ 'subseparator': { 'left': '', 'right': '' }
+    \ }
+function! LightlineReadonly()
+  return &readonly ? '' : ''
+endfunction
+function! LightlineFugitive()
+  if exists('*fugitive#head')
+    let branch = fugitive#head()
+    return branch !=# '' ? ''.branch : ''
+  endif
+  return ''
+endfunction
+      
 " Always show statusline
 set laststatus=2
-
-" Uncomment to prevent non-normal modes showing in powerline and below powerline.
+" Keeps insert status from showing up under statusbar.
 set noshowmode
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Other Stuff
@@ -257,4 +292,4 @@ let g:python_highlight_all = 1
 set guioptions-=m  "remove menu bar
 set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll bar
-set guioptions-=L  "remove left-hand scroll bar.
+set guioptions-=L  "remove left-hand scroll bar
