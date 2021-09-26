@@ -83,19 +83,30 @@ noremap <Leader>scd :cd %:p:h<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text editing
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Quick back to normal mode
+inoremap jh <esc>
+" yank to end of line
+noremap Y y$
 " Quick write to file 
-map <leader>w :w!<cr>
-" visualy select & move lines with <shift>
-xnoremap K :move '<-2<CR>gv-gv
-xnoremap J :move '>+1<CR>gv-gv
+noremap <leader><space> :w!<cr>
 " quickly add ` around a word
-map \` i`<Esc>ea`<Esc>
+nnoremap \` i`<Esc>ea`<Esc>
 " Duplicate lines
-noremap <C-S-Up> YP
-noremap <C-S-Down> YP
+nnoremap <C-S-Up> YP
+nnoremap <C-S-Down> YP
 " Jump to the start or end of line without leaving the home row
 noremap H ^
 noremap L $
+"delete all lines in the current buffer
+nnoremap <leader>daa ggdG
+" yank all lines in current buffer
+nnoremap yY :%yank <c-r>=v:register<cr><cr>
+" Quickly move current line
+nnoremap [e  :<c-u>execute 'move -1-'. v:count1<cr>
+nnoremap ]e  :<c-u>execute 'move +'. v:count1<cr>
+" visualy select & move lines with <shift>
+xnoremap K :move '<-2<CR>gv-gv
+xnoremap J :move '>+1<CR>gv-gv
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Fast editing and reloading of vimrc configs
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
