@@ -1,45 +1,37 @@
 
-set nocompatible                                       " be iMproved, required
-filetype off                                           " required
+set nocompatible                                    "required
+filetype off                                        "required
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 " Keep Plugins between vundle#begin/end.
 call vundle#begin()
 
-   Plugin 'VundleVim/Vundle.vim'                       " Plugin manager
-   Plugin 'godlygeek/tabular'                          " Align text
-   Plugin 'tpope/vim-fugitive'                         " Allows git commands
-   Plugin 'jreybert/vimagit'                           " Emacs magit for vim
-   Plugin 'tpope/vim-commentary'                       " Comment out lines
-   Plugin 'jlanzarotta/bufexplorer'                    " Buffer Explorer
-   Plugin 'rbgrouleff/bclose.vim'                      " Close buffer not window
-   Plugin 'scrooloose/nerdtree'                        " Nerdtree
-   Plugin 'iamcco/markdown-preview.nvim'               " Markdown preview
-   Plugin 'vimwiki/vimwiki', { 'branch': 'dev' }       " Vim wiki note taking
-   Plugin 'neoclide/coc.nvim', {'branch': 'release'}   " Line completion
-   Plugin 'vim-lastplace'                              " Opens last place edited
-"{{ Syntax Highlighting and Colors }}
-   Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'    " Highlighting Nerdtree
-   Plugin 'vim-python/python-syntax'                   " Highlighting Python
-   Plugin 'ap/vim-css-color'                           " Color previews for CSS
-   Plugin 'itchyny/lightline.vim'                      " Lightline statusbar
-   Plugin 'ryanoasis/vim-devicons'                     " Icons for Nerdtree (*last)
+Plugin 'VundleVim/Vundle.vim'                      "Plugin manager
+Plugin 'godlygeek/tabular'                         "Align text
+Plugin 'ervandew/supertab'                         "Tab select
+Plugin 'tpope/vim-fugitive'                        "Git commands
+Plugin 'jreybert/vimagit'                          "Git stagging 
+Plugin 'tpope/vim-commentary'                      "Comment lines
+Plugin 'jlanzarotta/bufexplorer'                   "Buf Explorer
+Plugin 'ap/vim-buftabline'                         "Buf tab line 
+Plugin 'rbgrouleff/bclose.vim'                     "Close buffer
+Plugin 'scrooloose/nerdtree'                       "Nerdtree
+Plugin 'iamcco/markdown-preview.nvim'              "Markdown preview
+Plugin 'vimwiki/vimwiki', { 'branch': 'dev' }      "Vim note taking
+Plugin 'neoclide/coc.nvim', {'branch': 'release'}  "Line completion
+Plugin 'vim-lastplace'                             "last edited
+Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'   "Hilight Ntree
+Plugin 'vim-python/python-syntax'                  "Python syntax
+Plugin 'ap/vim-css-color'                          "Color previews
+Plugin 'itchyny/lightline.vim'                     "Statusbar
+Plugin 'ryanoasis/vim-devicons'                    "Ntree icons*last
 
 call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
-"filetype plugin on
-""""""""""""""""""""""""""""""""""""""""""""""
-" => Brief help
-""""""""""""""""""""""""""""""""""""""""""""""
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins
-" :PluginUpdate     - to update or refresh
-" :PluginClean      - confirms removal of unused plugins
-" see :h vundle for more details or wiki for FAQ
-
-         " Put your non-Plugin stuff after this line
+filetype plugin on
+syntax enable
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General Settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -47,26 +39,25 @@ set encoding=UTF-8
 set background=dark
 set termguicolors
 let g:rehash256 = 1
-syntax enable
-set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Nerd\ Font\ Complete\ 12
-set path+=**                    " Searches current directory recursively.
-set wildmenu                    " Display all matches when tab complete.
+set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Nerd\ Font\ Complete\
+set path+=**                    "Searches subdirectory.
+set wildmenu                    "Shows all matches in tab complete.
 set wildmode=longest,list,full  "should display commands
-set ignorecase                  " Case insensitive
-set incsearch                   " Incremental search
-set smartcase                   " Use case if anycaps used
-set hlsearch                    " Search highlighting
-set hidden                      " Needed to keep multiple buffers open
-set nobackup                    " No auto backups
-set noswapfile                  " No swap
-set number                      " Display line numbers
-set relativenumber              " Display line numbers
-set clipboard=unnamedplus       " Copy/paste between vim and other programs.
-set so=7                        " Keep 7 lines visable when scrolling
-set history=999                 " Increase history (default = 20)
-set autoread                    " reload files if changed externally
+set ignorecase                  "Case insensitive
+set incsearch                   "Incremental search
+set smartcase                   "Use case if anycaps used
+set hlsearch                    "Search highlighting
+set hidden                      "Needed to keep multi buffers open
+set nobackup                    "No auto backups
+set noswapfile                  "No swap
+set number                      "Display line numbers
+set relativenumber              "Display relative line numbers
+set clipboard=unnamedplus       "Clipboard access to all programs.
+set so=7                        "Keep 7 lines visable when scrolling
+set history=999                 "Increase history (default = 20)
+set autoread                    "reload files if changed externally
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Key-bindings *note- leave right uncommeted,seen as command
+" => Key-bindings *leave right uncommeted,seen as command 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " mapped leader to <'>
 let mapleader="'"
