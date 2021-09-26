@@ -60,12 +60,7 @@ set autoread                    "reload files if changed externally
 " => Key-bindings *leave right uncommeted,seen as command 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " mapped leader to <'>
-let mapleader="'"
-" move vertically by visual line (don't skip wrapped lines)
-nnoremap k gk
-nnoremap j gj
-noremap <Up> gk
-noremap <Down> gj
+let mapleader = "'"
 " changes cursor to a bar when in insert mode 
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
@@ -73,11 +68,18 @@ let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 nnoremap : q:i
 nnoremap / q/i
 " => Open terminal inside Vim
-map <Leader>tt :vert term<CR>
+nnoremap <Leader>tt :vert term<CR>
 " quickly open a buffer for scribble
-map <leader>q :e ~/buffer<cr>
+noremap <leader>q :e ~/buffer<cr>
 " close buffer not window
 nnoremap Q :Bclose<CR>
+" buffer tabbing
+noremap <Leader>bb :bnext<CR>
+noremap <Leader>bg :bprev<CR>
+" Underline the current line, based on its length.
+noremap <silent> <leader>ul mmyypVr-<Esc>`m
+" Switch to current dir
+noremap <Leader>scd :cd %:p:h<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text editing
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
