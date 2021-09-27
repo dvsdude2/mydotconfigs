@@ -108,15 +108,6 @@ nnoremap ]e  :<c-u>execute 'move +'. v:count1<cr>
 xnoremap K :move '<-2<CR>gv-gv
 xnoremap J :move '>+1<CR>gv-gv
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Fast editing and reloading of vimrc configs
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" sources .vimrc after every write or save
-autocmd! bufwritepost ~/.vimrc source ~/.vimrc
-" open vimrc
-map <leader>e :e! ~/.vimrc<cr>
-" source vimrc
-map <leader>s :source ~/.vimrc<cr>
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => search and replace selected text
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ctrl-r in v mod will be asked for replacment
@@ -288,6 +279,20 @@ endfunction
 set laststatus=2
 " Keeps insert status from showing up under statusbar.
 set noshowmode
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Fast editing and reloading of vimrc configs 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" sources .vimrc after every write or save
+autocmd BufWritePost ~/.vimrc source $MYVIMRC
+" sources .vimrc after every write or save
+" autocmd! bufwritepost ~/.vimrc source ~/.vimrc
+" open vimrc
+nnoremap <leader>e :e! ~/.vimrc<cr> 
+" open vimrc in vertical split
+nnoremap <leader>ev :vsplit ~/.vimrc<cr>
+" source vimrc
+nnoremap <leader>sv :source $MYVIMRC<cr>
+" nnoremap <leader>s :source ~/.vimrc<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Other Stuff
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
