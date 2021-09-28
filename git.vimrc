@@ -242,11 +242,11 @@ let g:mkdp_auto_start = 0                    " Turns off auto preview
 " specify browser to open preview page       " default= ''
 let g:mkdp_browser = 'surf'                  " Uses surf for preview
 " Previews .md files
-nmap <Leader>mk <Plug>MarkdownPreview        
+nnoremap <Leader>mk <Plug>MarkdownPreview        
 " Kills the preview
-nmap <Leader>nm <Plug>MarkdownPreviewStop    
+nnoremap <Leader>nm <Plug>MarkdownPreviewStop    
 " Preview toggle
-nmap <Leader>mp <Plug>MarkdownPreviewToggle  
+nnoremap <Leader>mp <Plug>MarkdownPreviewToggle  
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Status Line
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -287,6 +287,36 @@ set laststatus=2
 " Keeps insert status from showing up under statusbar.
 set noshowmode
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Buftabline 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Shows buf. labels only if two or more are open
+let g:buftabline_show = 1
+" Switch buffers by their left to right number =2
+let g:buftabline_numbers = 2
+" switch buffers by their ordinal number
+" buftabline_numbers = 2
+nmap <leader>1 <Plug>BufTabLine.Go(1)
+nmap <leader>2 <Plug>BufTabLine.Go(2)
+nmap <leader>3 <Plug>BufTabLine.Go(3)
+nmap <leader>4 <Plug>BufTabLine.Go(4)
+nmap <leader>5 <Plug>BufTabLine.Go(5)
+
+" always switches to the last buffer
+nmap <leader>0 <Plug>BufTabLine.Go(-1)
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Spellcheck
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Toggle spell-checking.
+noremap <silent> <leader>sc :set spell!<CR>
+" Next spelling error
+nnoremap <silent> <f5> ]s
+" Previous spelling error
+nnoremap <silent> <f6> [s
+" Try to lazily fix the current spelling mistake.
+noremap <silent> <f7> 1z=
+" Suggest a spelling
+noremap <silent> <f8> z=
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Fast editing and reloading of vimrc configs 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " sources .vimrc after every write or save
@@ -301,10 +331,21 @@ nnoremap <leader>ev :vsplit ~/.vimrc<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 " nnoremap <leader>s :source ~/.vimrc<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Other Stuff
+" => Other Stuff.... Some stuff best read last 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" move vertically by visual line (don't skip wrapped lines)
+nnoremap <silent> k gk
+nnoremap <silent> j gj
+nnoremap <silent> <Up> gk
+nnoremap <silent> <Down> gj
+" Abbreviate error messages
+set shortmess=a
+" Add time stamp 
+nnoremap <F4> "=strftime("%a, %H:%M:%S")<CR>P
+inoremap <F4> <C-R>=strftime("%a, %H:%M:%S")<CR>
+" Use python syntax as a default
 let g:python_highlight_all = 1
-
+" Remove some stuff from gui version
 set guioptions-=m  "remove menu bar
 set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll bar
