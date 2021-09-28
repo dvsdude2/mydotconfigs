@@ -190,6 +190,20 @@ highlight BufTabLineActive   ctermfg=220    ctermbg=236
 " highlight xmlEndTag        ctermfg=114     ctermbg=none    cterm=none
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Fast editing and reloading of vimrc configs 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" sources .vimrc after every write or save
+autocmd BufWritePost ~/.vimrc source $MYVIMRC
+" sources .vimrc after every write or save
+" autocmd! bufwritepost ~/.vimrc source ~/.vimrc
+" open vimrc
+nnoremap <leader>e :e! ~/.vimrc<cr> 
+" open vimrc in vertical split
+nnoremap <leader>ev :vsplit ~/.vimrc<cr>
+" source vimrc
+nnoremap <leader>sv :source $MYVIMRC<cr>
+" nnoremap <leader>s :source ~/.vimrc<cr>
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => NERDTree
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Uncomment to autostart the NERDTree
@@ -202,24 +216,6 @@ let g:NERDTreeQuitOnOpen=0
 let NERDTreeShowHidden=1
 let NERDTreeMinimalUI = 1
 let g:NERDTreeWinSize=38
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => VimWiki
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" tells wiki to use markdown syntax
-let g:vimwiki_list = [{'path': '~/vimwiki/',
-                      \ 'syntax': 'markdown', 'ext': '.md'}]
-
-" this allows tab to work with coc menu selection 
-au filetype vimwiki silent! iunmap <buffer> <Tab>
-" set text to wrap  
-set textwidth=68 
-" that it's possible to set multiple columns. IE: column=80,82,84`
-" set colorcolumn=0
-" this should highlight when line is overlenth
-augroup vimrc_autocmds
-  autocmd BufEnter * highlight OverLength ctermbg=darkgrey guibg=#592929
-  autocmd BufEnter * match OverLength /\%70v.*/
-augroup END
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => COC plugin settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -317,19 +313,21 @@ noremap <silent> <f7> 1z=
 " Suggest a spelling
 noremap <silent> <f8> z=
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Fast editing and reloading of vimrc configs 
+" => VimWiki
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" sources .vimrc after every write or save
-autocmd BufWritePost ~/.vimrc source $MYVIMRC
-" sources .vimrc after every write or save
-" autocmd! bufwritepost ~/.vimrc source ~/.vimrc
-" open vimrc
-nnoremap <leader>e :e! ~/.vimrc<cr> 
-" open vimrc in vertical split
-nnoremap <leader>ev :vsplit ~/.vimrc<cr>
-" source vimrc
-nnoremap <leader>sv :source $MYVIMRC<cr>
-" nnoremap <leader>s :source ~/.vimrc<cr>
+" tells wiki to use markdown syntax
+let g:vimwiki_list = [{'path': '~/vimwiki/',
+                      \ 'syntax': 'markdown', 'ext': '.md'}]
+
+" this allows tab to work with coc menu selection 
+au filetype vimwiki silent! iunmap <buffer> <Tab>
+" set text to wrap  
+set textwidth=68 
+" this should highlight when line is overlenth
+augroup vimrc_autocmds
+  autocmd BufEnter * highlight OverLength ctermbg=darkgrey guibg=#592929
+  autocmd BufEnter * match OverLength /\%70v.*/
+augroup END
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Other Stuff.... Some stuff best read last 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
