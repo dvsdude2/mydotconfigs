@@ -110,7 +110,7 @@ xnoremap J :move '>+1<CR>gv-gv
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => search and replace selected text
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" ctrl-r in v mod will be asked for replacment
+" ctrl-r in v mod will be asked for replacement
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 " press * or # to search for the current selection
 vnoremap <silent> * :call VisualSearch('f')<CR>
@@ -135,30 +135,33 @@ noremap <silent> <C-Right> :vertical resize -3<CR>
 noremap <silent> <C-Up> :resize +3<CR>
 noremap <silent> <C-Down> :resize -3<CR>
 " Change 2 split windows from vert to horiz or horiz to vert
-nmap <Leader>th <C-w>t<C-w>H
-nmap <Leader>tk <C-w>t<C-w>K
+nnoremap <Leader>th <C-w>t<C-w>H
+nnoremap <Leader>tk <C-w>t<C-w>K
 " Removes pipes | that act as seperators on splits
 set fillchars+=vert:\
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Theming
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-highlight LineNr           ctermfg=8    ctermbg=none    cterm=none
-highlight CursorLineNr     ctermfg=7    ctermbg=8       cterm=none
-highlight VertSplit        ctermfg=0    ctermbg=8       cterm=none
-highlight Statement        ctermfg=2    ctermbg=none    cterm=none
-highlight Directory        ctermfg=4    ctermbg=none    cterm=none
+" highlight LineNr           ctermfg=8    ctermbg=none    cterm=none
+" highlight CursorLineNr     ctermfg=8    ctermbg=8       cterm=none
+" highlight VertSplit        ctermfg=0    ctermbg=8       cterm=none
+" highlight Statement        ctermfg=2    ctermbg=none    cterm=none
+" highlight Directory        ctermfg=4    ctermbg=none    cterm=none
 highlight StatusLine       ctermfg=7    ctermbg=8       cterm=none
 highlight StatusLineNC     ctermfg=7    ctermbg=8       cterm=none
-highlight NERDTreeClosable ctermfg=2
-highlight NERDTreeOpenable ctermfg=8
-highlight Comment          ctermfg=4    ctermbg=none    cterm=italic
-highlight Constant         ctermfg=12   ctermbg=none    cterm=none
-highlight Special          ctermfg=4    ctermbg=none    cterm=none
-highlight Identifier       ctermfg=6    ctermbg=none    cterm=none
-highlight PreProc          ctermfg=5    ctermbg=none    cterm=none
-highlight String           ctermfg=12   ctermbg=none    cterm=none
-highlight Number           ctermfg=1    ctermbg=none    cterm=none
-highlight Function         ctermfg=1    ctermbg=none    cterm=none
+highlight BufTabLineHidden   ctermfg=239    ctermbg=236
+highlight BufTabLineFill     ctermfg=220    ctermbg=236
+highlight BufTabLineActive   ctermfg=220    ctermbg=236
+" highlight NERDTreeClosable ctermfg=2
+" highlight NERDTreeOpenable ctermfg=8
+" highlight Comment          ctermfg=4    ctermbg=none    cterm=italic
+" highlight Constant         ctermfg=12   ctermbg=none    cterm=none
+" highlight Special          ctermfg=4    ctermbg=none    cterm=none
+" highlight Identifier       ctermfg=6    ctermbg=none    cterm=none
+" highlight PreProc          ctermfg=5    ctermbg=none    cterm=none
+" highlight String           ctermfg=12   ctermbg=none    cterm=none
+" highlight Number           ctermfg=1    ctermbg=none    cterm=none
+" highlight Function         ctermfg=1    ctermbg=none    cterm=none
 " highlight WildMenu         ctermfg=0       ctermbg=80      cterm=none
 " highlight Folded           ctermfg=103     ctermbg=234     cterm=none
 " highlight FoldColumn       ctermfg=103     ctermbg=234     cterm=none
