@@ -194,13 +194,32 @@ highlight BufTabLineActive   ctermfg=220    ctermbg=236
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Uncomment to autostart the NERDTree
 " autocmd vimenter * NERDTree
-map <C-n> :NERDTreeToggle<CR>
+nnoremap <C-n> :NERDTreeToggle<CR>
 let g:NERDTreeDirArrowExpandable = '►'
 let g:NERDTreeDirArrowCollapsible = '▼'
 let NERDTreeShowLineNumbers=1
+let g:NERDTreeQuitOnOpen=0
 let NERDTreeShowHidden=1
 let NERDTreeMinimalUI = 1
 let g:NERDTreeWinSize=38
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => VimWiki
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" tells wiki to use markdown syntax
+let g:vimwiki_list = [{'path': '~/vimwiki/',
+                      \ 'syntax': 'markdown', 'ext': '.md'}]
+
+" this allows tab to work with coc menu selection 
+au filetype vimwiki silent! iunmap <buffer> <Tab>
+" set text to wrap  
+set textwidth=68 
+" that it's possible to set multiple columns. IE: column=80,82,84`
+" set colorcolumn=0
+" this should highlight when line is overlenth
+augroup vimrc_autocmds
+  autocmd BufEnter * highlight OverLength ctermbg=darkgrey guibg=#592929
+  autocmd BufEnter * match OverLength /\%70v.*/
+augroup END
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => COC plugin settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -210,27 +229,12 @@ set shortmess+=c
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 " To make <cr> select the first completion item
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
-" use tab to make selections ...was taken down for debugging
-inoremap <silent><expr> <Tab>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<Tab>" :
-      \ coc#refresh()
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => VimWiki
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:vimwiki_list = [{'path': '~/vimwiki/',
-                      \ 'syntax': 'markdown', 'ext': '.md'}]
-
-" this allows tab to work with coc menu selection 
-au filetype vimwiki silent! iunmap <buffer> <Tab>
-" set text to wrap at 89 characters 
-set textwidth=89 
-" this should highlight when line is overlenth
-augroup vimrc_autocmds
-  autocmd BufEnter * highlight OverLength ctermbg=darkgrey guibg=#592929
-  autocmd BufEnter * match OverLength /\%85v.*/
-augroup END
+" use tab to make selections ...was taken down for supertab  
+" noremap! <silent><expr> <Tab>
+"       \ pumvisible() ? "\<C-n>" :
+"       \ <SID>check_back_space() ? "\<Tab>" :
+"       \ coc#refresh()
+let g:SuperTabDefaultCompletionType = "<c-n>"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Markdown-Preview
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
