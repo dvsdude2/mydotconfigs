@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<channel name="xfce4-panel" version="1.0">
+  <property name="configver" type="int" value="2"/>
+  <property name="panels" type="array">
+    <value type="int" value="1"/>
+    <property name="panel-1" type="empty">
+      <property name="position" type="string" value="p=6;x=960;y=16"/>
+      <property name="length" type="uint" value="100"/>
+      <property name="position-locked" type="bool" value="true"/>
+      <property name="size" type="uint" value="30"/>
+      <property name="plugin-ids" type="array">
+        <value type="int" value="7"/>
+        <value type="int" value="3"/>
+        <value type="int" value="15"/>
+        <value type="int" value="4"/>
+        <value type="int" value="6"/>
+        <value type="int" value="8"/>
+        <value type="int" value="5"/>
+        <value type="int" value="2"/>
+      </property>
+      <property name="background-alpha" type="uint" value="76"/>
+    </property>
+    <property name="dark-mode" type="bool" value="false"/>
+  </property>
+  <property name="plugins" type="empty">
+    <property name="plugin-2" type="string" value="actions">
+      <property name="items" type="array">
+        <value type="string" value="+restart"/>
+        <value type="string" value="+logout"/>
+        <value type="string" value="+suspend"/>
+        <value type="string" value="+shutdown"/>
+        <value type="string" value="-lock-screen"/>
+        <value type="string" value="-switch-user"/>
+        <value type="string" value="-separator"/>
+        <value type="string" value="-hibernate"/>
+        <value type="string" value="-separator"/>
+        <value type="string" value="-separator"/>
+        <value type="string" value="-logout-dialog"/>
+      </property>
+    </property>
+    <property name="plugin-3" type="string" value="tasklist"/>
+    <property name="plugin-15" type="string" value="separator">
+      <property name="expand" type="bool" value="true"/>
+      <property name="style" type="uint" value="0"/>
+    </property>
+    <property name="plugin-4" type="string" value="pager">
+      <property name="rows" type="uint" value="1"/>
+    </property>
+    <property name="plugin-5" type="string" value="clock">
+      <property name="mode" type="uint" value="2"/>
+      <property name="digital-format" type="string" value="%a %_d %b, %r"/>
+      <property name="show-military" type="bool" value="false"/>
+    </property>
+    <property name="plugin-6" type="string" value="systray">
+      <property name="names-visible" type="array">
+        <value type="string" value="evolution-alarm-notify"/>
+        <value type="string" value="discord"/>
+        <value type="string" value="pragha music player"/>
+        <value type="string" value="simplescreenrecorder"/>
+        <value type="string" value="pamac-tray"/>
+        <value type="string" value="vlc"/>
+        <value type="string" value="blueberry-tray.py"/>
+        <value type="string" value="xfce4-power-manager"/>
+        <value type="string" value="task manager"/>
+        <value type="string" value="insync.py"/>
+        <value type="string" value="telegramdesktop"/>
+        <value type="string" value="variety"/>
+        <value type="string" value="flameshot"/>
+        <value type="string" value="bluetooth"/>
+        <value type="string" value="clipman"/>
+        <value type="string" value="redshift-gtk"/>
+        <value type="string" value="scp-dbus-service.py"/>
+        <value type="string" value="networkmanager applet"/>
+        <value type="string" value="thunar"/>
+        <value type="string" value="gpick"/>
+        <value type="string" value="clipit"/>
+        <value type="string" value="dropbox"/>
+      </property>
+      <property name="show-frame" type="bool" value="false"/>
+      <property name="names-ordered" type="array">
+        <value type="string" value="zoom"/>
+        <value type="string" value="simplescreenrecorder"/>
+        <value type="string" value="task manager"/>
+        <value type="string" value="vlc"/>
+        <value type="string" value="xfce terminal"/>
+        <value type="string" value="thunar"/>
+        <value type="string" value="dropbox"/>
+        <value type="string" value="discord"/>
+        <value type="string" value="insync"/>
+        <value type="string" value="variety"/>
+        <value type="string" value="telegramdesktop"/>
+        <value type="string" value="blueberry-tray.py"/>
+        <value type="string" value="flameshot"/>
+        <value type="string" value="pamac-tray"/>
+        <value type="string" value="networkmanager applet"/>
+        <value type="string" value="clipman"/>
+      </property>
+      <property name="known-legacy-items" type="array">
+        <value type="string" value="pragha music player"/>
+        <value type="string" value="gpick"/>
+        <value type="string" value="psensor"/>
+        <value type="string" value="thunar"/>
+        <value type="string" value="lbry-app"/>
+        <value type="string" value="pamac-tray"/>
+        <value type="string" value="networkmanager applet"/>
+        <value type="string" value="notes"/>
+        <value type="string" value="clipman"/>
+      </property>
+      <property name="known-items" type="array">
+        <value type="string" value="Screenkey"/>
+        <value type="string" value="flameshot"/>
+        <value type="string" value="vlc"/>
+        <value type="string" value="LBRY1"/>
+        <value type="string" value="variety"/>
+      </property>
+      <property name="symbolic-icons" type="bool" value="false"/>
+    </property>
+    <property name="plugin-7" type="string" value="whiskermenu"/>
+    <property name="clipman" type="empty">
+      <property name="tweaks" type="empty">
+        <property name="never-confirm-history-clear" type="bool" value="true"/>
+        <property name="paste-on-activate" type="uint" value="1"/>
+      </property>
+      <property name="settings" type="empty">
+        <property name="max-texts-in-history" type="uint" value="200"/>
+        <property name="history-ignore-primary-clipboard" type="bool" value="false"/>
+        <property name="add-primary-clipboard" type="bool" value="true"/>
+      </property>
+    </property>
+    <property name="plugin-8" type="string" value="pulseaudio">
+      <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
+      <property name="mpris-players" type="string" value="chromium.instance10159;chromium.instance10248;chromium.instance10407;chromium.instance1054;chromium.instance10585;chromium.instance10807;chromium.instance110303;chromium.instance113744;chromium.instance113954;chromium.instance114256;chromium.instance114953;chromium.instance11497;chromium.instance116585;chromium.instance12374;chromium.instance12997;chromium.instance13163;chromium.instance13411;chromium.instance135984;chromium.instance137448;chromium.instance1378;chromium.instance14353;chromium.instance14655;chromium.instance1471;chromium.instance14731;chromium.instance15657;chromium.instance15711;chromium.instance15728;chromium.instance15816;chromium.instance15877;chromium.instance15982;chromium.instance1607;chromium.instance16479;chromium.instance16721;chromium.instance16869;chromium.instance17139;chromium.instance17325;chromium.instance1775;chromium.instance17812;chromium.instance17964;chromium.instance18650;chromium.instance1891;chromium.instance18928;chromium.instance1911;chromium.instance19212;chromium.instance19295;chromium.instance19297;chromium.instance1942;chromium.instance19430;chromium.instance19664;chromium.instance19915;chromium.instance20049;chromium.instance20151;chromium.instance20155;chromium.instance20429;chromium.instance20751;chromium.instance2089;chromium.instance20938;chromium.instance21661;chromium.instance21681;chromium.instance21824;chromium.instance21954;chromium.instance22136;chromium.instance2223;chromium.instance22259;chromium.instance22729;chromium.instance22811;chromium.instance22835;chromium.instance23033;chromium.instance23252;chromium.instance23337;chromium.instance23376;chromium.instance23404;chromium.instance23514;chromium.instance23528;chromium.instance24012;chromium.instance2532;chromium.instance25396;chromium.instance25465;chromium.instance25964;chromium.instance26046;chromium.instance2659;chromium.instance28064;chromium.instance28124;chromium.instance2839;chromium.instance29767;chromium.instance3020;chromium.instance30573;chromium.instance30769;chromium.instance31731;chromium.instance3179;chromium.instance32775;chromium.instance32912;chromium.instance33409;chromium.instance34459;chromium.instance3471;chromium.instance35327;chromium.instance3630;chromium.instance36420;chromium.instance3674;chromium.instance3718;chromium.instance37272;chromium.instance37609;chromium.instance37749;chromium.instance38041;chromium.instance38532;chromium.instance38767;chromium.instance39854;chromium.instance40091;chromium.instance4050;chromium.instance4077;chromium.instance42004;chromium.instance42349;chromium.instance42376;chromium.instance4280;chromium.instance43519;chromium.instance43825;chromium.instance4384;chromium.instance4419;chromium.instance44849;chromium.instance44959;chromium.instance45645;chromium.instance4573;chromium.instance45789;chromium.instance45988;chromium.instance46127;chromium.instance46321;chromium.instance4686;chromium.instance48791;chromium.instance48932;chromium.instance4924;chromium.instance4956;chromium.instance50478;chromium.instance5052;chromium.instance5222;chromium.instance5269;chromium.instance5337;chromium.instance5445;chromium.instance5484;chromium.instance5494;chromium.instance5652;chromium.instance56728;chromium.instance5707;chromium.instance5741;chromium.instance5742;chromium.instance57980;chromium.instance5806;chromium.instance5852;chromium.instance5920;chromium.instance6014;chromium.instance62728;chromium.instance6385;chromium.instance6415;chromium.instance6429;chromium.instance6458;chromium.instance6518;chromium.instance6630;chromium.instance6646;chromium.instance6730;chromium.instance6762;chromium.instance6764;chromium.instance68264;chromium.instance68724;chromium.instance6998;chromium.instance7230;chromium.instance7454;chromium.instance75211;chromium.instance76778;chromium.instance78977;chromium.instance80485;chromium.instance8097;chromium.instance8122;chromium.instance8395;chromium.instance8406;chromium.instance85557;chromium.instance85674;chromium.instance8595;chromium.instance8609;chromium.instance8933;chromium.instance8972;chromium.instance9141;chromium.instance915;chromium.instance919;chromium.instance928;chromium.instance930;chromium.instance931;chromium.instance934;chromium.instance936;chromium.instance93655;chromium.instance937;chromium.instance938;chromium.instance939;chromium.instance940;chromium.instance941;chromium.instance944;chromium.instance945;chromium.instance948;chromium.instance953;chromium.instance954;chromium.instance955;chromium.instance956;chromium.instance9580;chromium.instance962;chromium.instance968;chromium.instance969;chromium.instance9796;firefox.instance32823;firefox.instance54983;pragha;spotify;vlc"/>
+    </property>
+    <property name="notes" type="empty">
+      <property name="new-window" type="empty">
+        <property name="width" type="int" value="300"/>
+        <property name="height" type="int" value="375"/>
+        <property name="sticky" type="bool" value="true"/>
+      </property>
+      <property name="global" type="empty">
+        <property name="skip-taskbar-hint" type="bool" value="false"/>
+      </property>
+    </property>
+  </property>
+</channel>
