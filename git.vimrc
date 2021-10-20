@@ -8,7 +8,6 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'                      "Plugin manager
-Plugin 'godlygeek/tabular'                         "Align text
 Plugin 'ervandew/supertab'                         "Tab select
 Plugin 'tpope/vim-fugitive'                        "Git commands
 Plugin 'jreybert/vimagit'                          "Git stagging 
@@ -17,6 +16,8 @@ Plugin 'jlanzarotta/bufexplorer'                   "Buf Explorer
 Plugin 'ap/vim-buftabline'                         "Buf tab line 
 Plugin 'rbgrouleff/bclose.vim'                     "Close buffer
 Plugin 'scrooloose/nerdtree'                       "Nerdtree
+Plugin 'axvr/org.vim'                              "Org. mode syntax
+Plugin 'easymotion/vim-easymotion'                 "Snipe vim 
 Plugin 'iamcco/markdown-preview.nvim'              "Markdown preview
 Plugin 'vimwiki/vimwiki', { 'branch': 'dev' }      "Vim note taking
 Plugin 'neoclide/coc.nvim', {'branch': 'release'}  "Line completion
@@ -101,12 +102,19 @@ noremap L $
 nnoremap <leader>daa ggdG
 " yank all lines in current buffer
 nnoremap yY :%yank <c-r>=v:register<cr><cr>
+" Quickly add empty lines
+nnoremap <silent> <F10> :<C-u>put!=repeat(nr2char(10),v:count)<Bar>execute "']+1"<CR>
+nnoremap <silent> <F9> :<C-u>put =repeat(nr2char(10),v:count)<Bar>execute "'[-1"<CR>
+" nnoremap <silent> <F10> :<c-u>put! =repeat(nr2char(10), v:count1)<cr>'[
+" nnoremap <silent> <F9> :<c-u>put =repeat(nr2char(10), v:count1)<cr>
 " Quickly move current line
 nnoremap [e  :<c-u>execute 'move -1-'. v:count1<cr>
 nnoremap ]e  :<c-u>execute 'move +'. v:count1<cr>
 " visualy select & move lines with <shift>
 xnoremap K :move '<-2<CR>gv-gv
 xnoremap J :move '>+1<CR>gv-gv
+" Split line at cursor 
+nnoremap <silent> S :keeppatterns substitute/\s*\%#\s*/\r/e <bar> normal! ==<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => search and replace selected text
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -115,8 +123,8 @@ vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 " press * or # to search for the current selection
 vnoremap <silent> * :call VisualSearch('f')<CR>
 vnoremap <silent> # :call VisualSearch('b')<CR>
-" after search hit enter again to remove highlight
-nnoremap <silent> <CR> :nohlsearch<CR><CR>
+" after search hit Ctrl-x to remove highlight
+nnoremap <silent> <C-x> :nohlsearch<CR><CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Splits and Tabbed Files
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -197,12 +205,11 @@ autocmd BufWritePost ~/.vimrc source $MYVIMRC
 " sources .vimrc after every write or save
 " autocmd! bufwritepost ~/.vimrc source ~/.vimrc
 " open vimrc
-nnoremap <leader>e :e! ~/.vimrc<cr> 
+nmap <leader>e :e! ~/.vimrc<cr> 
 " open vimrc in vertical split
-nnoremap <leader>ev :vsplit ~/.vimrc<cr>
+nmap <leader>ev :vsplit ~/.vimrc<cr>
 " source vimrc
-nnoremap <leader>sv :source $MYVIMRC<cr>
-" nnoremap <leader>s :source ~/.vimrc<cr>
+nmap <leader>sv :source $MYVIMRC<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => NERDTree
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -300,6 +307,25 @@ nmap <leader>5 <Plug>BufTabLine.Go(5)
 " always switches to the last buffer
 nmap <leader>0 <Plug>BufTabLine.Go(-1)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Easymotion
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:EasyMotion_do_mapping = 0 " Disable default mappings
+
+" Jump to anywhere with minimal keystrokes, just one key binding.
+" `s{char}{label}`
+" nmap s <Plug>(easymotion-overwin-f)
+" or
+" `s{char}{char}{label}`
+" Need one more keystroke, but on average, may be more comfortable.
+nmap s <Plug>(easymotion-overwin-f2)
+
+" Turn on case-insensitive feature
+let g:EasyMotion_smartcase = 1
+
+" JK motions: Line motions
+nmap <Leader>j <Plug>(easymotion-j)
+nmap <Leader>k <Plug>(easymotion-k)
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Spellcheck
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Toggle spell-checking.
@@ -331,13 +357,15 @@ augroup END
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Other Stuff.... Some stuff best read last 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" makes folds cleaner
+let g:org_clean_folds = 1
 " move vertically by visual line (don't skip wrapped lines)
 nnoremap <silent> k gk
 nnoremap <silent> j gj
 nnoremap <silent> <Up> gk
 nnoremap <silent> <Down> gj
 " Abbreviate error messages
-set shortmess=a
+" set shortmess=a
 " Add time stamp 
 nnoremap <F4> "=strftime("%a, %H:%M:%S")<CR>P
 inoremap <F4> <C-R>=strftime("%a, %H:%M:%S")<CR>
