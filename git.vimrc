@@ -10,6 +10,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'                      "Plugin manager
 Plugin 'ervandew/supertab'                         "Tab select
 Plugin 'tpope/vim-fugitive'                        "Git commands
+Plugin 'tpope/vim-surround'                        "Surround text
 Plugin 'jreybert/vimagit'                          "Git stagging 
 Plugin 'tpope/vim-commentary'                      "Comment lines
 Plugin 'jlanzarotta/bufexplorer'                   "Buf Explorer
@@ -86,6 +87,7 @@ noremap <Leader>scd :cd %:p:h<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Quick back to normal mode
 inoremap jh <esc>
+inoremap jj <esc>
 " yank to end of line
 noremap Y y$
 " Quick write to file 
@@ -354,6 +356,12 @@ augroup vimrc_autocmds
   autocmd BufEnter * highlight OverLength ctermbg=darkgrey guibg=#592929
   autocmd BufEnter * match OverLength /\%70v.*/
 augroup END
+:hi VimwikiHeader1 guifg=#FF00FF
+:hi VimwikiHeader2 guifg=#0000FF
+:hi VimwikiHeader3 guifg=#00FF00
+:hi VimwikiHeader4 guifg=#FF0000
+:hi VimwikiHeader5 guifg=#00FFFF
+:hi VimwikiHeader6 guifg=#FFFF00
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Other Stuff.... Some stuff best read last 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
