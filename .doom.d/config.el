@@ -65,9 +65,6 @@
 ;;Maximize the window upon startup
 (add-to-list 'initial-frame-alist '(fullscreen . maximized))
 
-;; adds package menu. ratings, usage.
-(require 'paradox)
-(paradox-enable)
 
 ;; (add-to-list 'load-path "/some/path/neotree")
 (require 'neotree)
@@ -93,16 +90,6 @@
 ;; Whitespace -- is to color change text that goes beyond limit ;;;;;;;;;;;;;;;;;;;;;
 ;; ==================================================================================
 ;;
-;;(require 'whitespace)
-;;(setq whitespace-line-column 70) ;; limit line length
-;;(setq whitespace-style '(face lines-tail))
-;;(global-whitespace-mode +1)
-;;(add-hook 'prog-mode-hook 'whitespace-mode)
-
-;; (require 'whitespace)
-;; (setq whitespace-line-column 68)
-;; (setq whitespace-style '(face lines-tail))
-;; (global-whitespace-mode 1)
 
 ;; `lines-tail`, highlight the part that goes beyond the
 ;; limit of `whitespace-line-column`
@@ -118,6 +105,12 @@
 ;;
 ;; org-settings ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; ====================================================================
+;;
+;; embrace-commander
+(global-set-key (kbd "C-,") 'embrace-commander)
+(add-hook 'org-mode-hook 'embrace-org-mode-hook)
+;;
+(evil-embrace-enable-evil-surround-integration)
 ;;
 ;; hide regular expression characters eg. /org italic/
 ;;(setq org-hide-emphasis-markers t)
@@ -138,39 +131,121 @@
 (require 'plain-org-wiki)
 (setq plain-org-wiki-directory "~/org/wiki")
 
+
+;;
+(setq org-agenda-include-diary t)
+;;
+;;
+(setq org-agenda-timegrid-use-ampm 1)
+;;
+;;
+(custom-set-faces
+  '(org-level-1 ((t (:inherit outline-1 :height 1.2))))
+  '(org-level-2 ((t (:inherit outline-2 :height 1.0))))
+  '(org-level-3 ((t (:inherit outline-3 :height 1.0))))
+  '(org-level-4 ((t (:inherit outline-4 :height 1.0))))
+  '(org-level-5 ((t (:inherit outline-5 :height 1.0))))
+)
+
 ;;
 ;; completion engine ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; =====================================================================
 ;;
 ;;
-;; this is a completion engine as reveiwed by https://systemcrafters.cc/emacs-tips/streamline-completions-with-vertico/
-(use-package vertico
-  :ensure t
-  :init
-  (vertico-mode))
-;; this is to add the vim keybindings
-(use-package vertico
-  :ensure t
-  :bind (:map vertico-map
-         ("C-j" . vertico-next)
-         ("C-k" . vertico-previous)
-         ("C-f" . vertico-exit)
-         :map minibuffer-local-map
-         ("M-h" . backward-kill-word))
-  :custom
-  (vertico-cycle t)
-  :init
-  (vertico-mode))
+;; ;; this is a completion engine as reveiwed by https://systemcrafters.cc/emacs-tips/streamline-completions-with-vertico/
+;; (use-package vertico
+;;   :ensure t
+;;   :init
+;;   (vertico-mode))
+;; ;; this is to add the vim keybindings
+;; (use-package vertico
+;;   :ensure t
+;;   :bind (:map vertico-map
+;;          ("C-j" . vertico-next)
+;;          ("C-k" . vertico-previous)
+;;          ("C-f" . vertico-exit)
+;;          :map minibuffer-local-map
+;;          ("M-h" . backward-kill-word))
+;;   :custom
+;;   (vertico-cycle t)
+;;   :init
+;;   (vertico-mode))
 
+;; (use-package savehist
+;;   :init
+;;   (savehist-mode))
+
+;; (use-package marginalia
+;;   :after vertico
+;;   :ensure t
+;;   :custom
+;;   (marginalia-annotators '(marginalia-annotators-heavy marginalia-annotators-light nil))
+;;   :init
+;;   (marginalia-mode))
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; this is verticos start config
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+
+;; Enable vertico
+(use-package vertico
+  :init
+  (vertico-mode)
+
+  ;; Grow and shrink the Vertico minibuffer
+  (setq vertico-resize t)
+
+  ;; Optionally enable cycling for `vertico-next' and `vertico-previous'.
+  (setq vertico-cycle t)
+  )
+
+;; ;; Optionally use the `orderless' completion style. See
+;; ;; `+orderless-dispatch' in the Consult wiki for an advanced Orderless style
+;; ;; dispatcher. Additionally enable `partial-completion' for file path
+;; ;; expansion. `partial-completion' is important for wildcard support.
+;; ;; Multiple files can be opened at once with `find-file' if you enter a
+;; ;; wildcard. You may also give the `initials' completion style a try.
+
+;; (use-package orderless
+;;   :init
+;; ;; (setq completion-styles '(basic substring partial-completion flex)
+;; ;; (setq completion-styles '(substring orderless)
+;;   (setq completion-styles '(orderless)
+;;         completion-category-defaults nil
+;;         completion-category-overrides '((file (styles partial-completion)))))
+
+;; ;; Persist history over Emacs restarts. Vertico sorts by history position.
 (use-package savehist
   :init
   (savehist-mode))
 
-(use-package marginalia
-  :after vertico
-  :ensure t
-  :custom
-  (marginalia-annotators '(marginalia-annotators-heavy marginalia-annotators-light nil))
-  :init
-  (marginalia-mode))
+;; ;; A few more useful configurations...
+;; (use-package emacs
+;;   :init
+  ;; Add prompt indicator to `completing-read-multiple'.
+  ;; Alternatively try `consult-completing-read-multiple'.
+  (defun crm-indicator (args)
+    (cons (concat "[CRM] " (car args)) (cdr args)))
+  (advice-add #'completing-read-multiple :filter-args #'crm-indicator)
 
+  ;; Do not allow the cursor in the minibuffer prompt
+  (setq minibuffer-prompt-properties
+        '(read-only t cursor-intangible t face minibuffer-prompt))
+  (add-hook 'minibuffer-setup-hook #'cursor-intangible-mode)
+
+
+  ;; Enable recursive minibuffers
+(setq enable-recursive-minibuffers t)
+
+(setq read-file-name-completion-ignore-case t
+      read-buffer-completion-ignore-case t
+      completion-ignore-case t)
+
+
+;; this should replicate scrolloff in vim
+(setq scroll-conservatively 101
+      scroll-margin 7
+      scroll-preserve-screen-position 't)
