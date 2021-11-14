@@ -2,7 +2,7 @@
 
 
 **<h2 align="left">DVS.DOTCONFIGS</h2>**                      
-
+![I made this](https://github.com/dvsdude2/mydotconfigs/blob/main/image-repo/imadethis2.gif)
 
 **<h3 align="left">description</h3>**
 _______________________________
