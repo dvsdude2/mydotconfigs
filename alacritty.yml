@@ -28,9 +28,10 @@ window:
   # Number of lines/columns (not pixels) in the terminal. The number of columns
   # must be at least `2`, while using a value of `0` for columns and lines will
   # fall back to the window manager's recommended size.
-  dimensions:
-    columns: 90
-    lines: 30
+  # dimensions:
+  #   columns: 90
+  #   lines: 30
+  opacity: 0.7
 
   # Window position (changes require restart)
   #
@@ -59,7 +60,7 @@ window:
   # Values for `decorations` (macOS only):
   #     - transparent: Title bar, transparent background and title bar buttons
   #     - buttonless: Title bar, transparent background and no title bar buttons
-  #decorations: full
+  decorations: none
   # Startup Mode (changes require restart)
   #
   # Values for `startup_mode`:
@@ -69,7 +70,7 @@ window:
   #
   # Values for `startup_mode` (macOS only):
   #   - SimpleFullscreen
-  #startup_mode: Windowed
+  startup_mode: Maximized
   # Window title
   title: Alacritty
 
@@ -104,7 +105,7 @@ font:
     # family: Source Code Pro
     # family: CodeNewRoman Nerd Font
     # family: RobotoMono Nerd Font
-    family: Hack Nerd Font
+    # family: Hack Nerd Font
     # family: JetBrains Mono
     # family: UbuntuMono Nerd Font
     # family: Monofur Nerd Font
@@ -123,7 +124,7 @@ font:
     # family: Source Code Pro
     # family: CodeNewRoman Nerd Font
     # family: RobotoMono Nerd Font
-    family: Hack Nerd Font
+    # family: Hack Nerd Font
     # family: JetBrains Mono
     # family: UbuntuMono Nerd Font
     # family: Monofur Nerd Font
@@ -142,7 +143,7 @@ font:
     # family: Source Code Pro
     # family: CodeNewRoman Nerd Font
     # family: RobotoMono Nerd Font
-    family: Hack Nerd Font
+    # family: Hack Nerd Font
     # family: JetBrains Mono
     # family: UbuntuMono Nerd Font
     # family: Monofuritalic Nerd Font Mono
@@ -161,7 +162,7 @@ font:
     # family: Source Code Pro
     # family: CodeNewRoman Nerd Font
     # family: RobotoMono Nerd Font
-    family: Hack Nerd Font
+    # family: Hack Nerd Font
     # family: JetBrains Mono
     # family: UbuntuMono Nerd Font
     # family: Monofuritalic Nerd Font Mono
@@ -219,7 +220,7 @@ colors:
     green: '#03C03C'
     yellow: '#FDFF00'
     blue: '#007FFF'
-    magenta: '#FF1493'
+    magenta: '#B5175A'
     cyan: '#00CCCC'
     white: '#FFFAFA'
 # Background opacity
@@ -227,7 +228,7 @@ colors:
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
 # background_opacity: 1.0
-background_opacity: 0.80
+# background_opacity: 0.80
 
 #selection:
 # This string contains all characters that are used as separators for

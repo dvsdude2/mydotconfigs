@@ -15,6 +15,7 @@ _______________________________
 
 #### Installation
 ________________________________
+
 use [**git**  ](https://git-scm.com/ "download git") to clone
 
 ```python
@@ -23,11 +24,13 @@ git clone https://github.com/dvsdude2/my.dotconfigs.git
 
 #### Usage
 ________________________________
+
     after clean install of a new ISO
     use these files to get back all the customizing
 
 #### Contributing
 ________________________________
+
 Pull requests are welcome. For major changes, please open an issue first to
 discuss what you would like to change.
 
